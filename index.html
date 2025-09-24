@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rialo Run — Lách chướng ngại vật</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Rialo Run</h1>
+    <p class="subtitle">Dùng ← → để lách chướng ngại vật. Hãy sống sót và đạt badge!</p>
+  </header>
+
+  <main>
+    <canvas id="game" width="480" height="640"></canvas>
+
+    <div id="hud">
+      <div>Điểm: <span id="score">0</span></div>
+      <div>Highscore: <span id="best">0</span></div>
+      <div>Badge: <span id="badge">—</span></div>
+      <img id="badgeIcon" src="" alt="badge icon" hidden />
+    </div>
+
+    <div id="controls">
+      <button id="startBtn">Bắt đầu</button>
+      <button id="restartBtn" disabled>Chơi lại</button>
+      <div class="hint">Điều khiển: ← / →</div>
+    </div>
+  </main>
+
+  <!-- preload audio -->
+  <audio id="bgm" src="assets/bgm.mp3" loop preload="auto"></audio>
+  <audio id="hitSound" src="assets/hit.wav" preload="auto"></audio>
+
+  <footer>
+    <small>&copy; 2025 Rialo Run — MIT License</small>
+  </footer>
+
+  <script src="game.js"></script>
+</body>
+</html>
+<audio id="bgm" src="assets/bgm_loop.mp3" loop preload="auto"></audio>
+<audio id="hitSound" src="assets/hit.wav" preload="auto"></audio>
+<audio id="jumpSound" src="assets/jump.wav" preload="auto"></audio>
