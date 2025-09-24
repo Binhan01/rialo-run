@@ -33,7 +33,6 @@ const player = {
   update() {
     if (keys['ArrowLeft'] && this.x > 0) this.x -= this.speed;
     if (keys['ArrowRight'] && this.x + this.w < canvas.width) this.x += this.speed;
-    // draw
     ctx.fillStyle = 'white';
     ctx.fillRect(this.x, this.y, this.w, this.h);
   }
@@ -59,6 +58,12 @@ class Obstacle {
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.r, 0, Math.PI*2);
     ctx.fill();
+    
+    // Optional: draw name above obstacle
+    ctx.fillStyle = 'white';
+    ctx.font = '12px Arial';
+    ctx.textAlign = 'center';
+    ctx.fillText(this.name, this.x, this.y - this.r - 5);
   }
   outOfScreen() { return this.y - this.r > canvas.height; }
 }
